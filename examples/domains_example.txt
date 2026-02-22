@@ -1,0 +1,26 @@
+# Example domains file for domain scraper
+# One domain per line
+# Comments start with #
+
+# Polish Companies
+example-bakery.pl
+www.cukiernia-warszawa.pl
+https://hurtownia-przypraw.pl
+
+# French Companies
+chocolatier-paris.fr
+https://www.patisserie-lyon.com
+epicerie-fine.fr
+
+# You can include:
+# - Just domain: example.com
+# - With www: www.example.com
+# - Full URL: https://example.com
+# - Any TLD: .pl, .fr, .de, .it, .es, .com, etc.
+
+# The scraper will:
+# 1. Find all emails from the website
+# 2. Extract phone numbers
+# 3. Get company name
+# 4. Find social media links
+# 5. Extract business description

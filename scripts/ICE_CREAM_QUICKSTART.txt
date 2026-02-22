@@ -1,0 +1,133 @@
+╔═══════════════════════════════════════════════════════════════════════════╗
+║                   ICE CREAM SCRAPER - QUICK START                         ║
+╚═══════════════════════════════════════════════════════════════════════════╝
+
+📊 OPERATION SCALE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Total Cities: 639 (all with 50K+ population)
+  Total Searches: 2,556 (639 cities × 4 keywords)
+  Max Results per Search: 500 businesses
+  Expected Time: 80-110 hours (3-5 days continuous)
+  Expected Leads: 200,000 - 400,000 unique ice cream businesses
+
+🌍 COUNTRY BREAKDOWN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  🇩🇪 Germany:     191 cities
+  🇮🇹 Italy:       140 cities
+  🇪🇸 Spain:       120 cities
+  🇳🇱 Netherlands:  58 cities
+  🇵🇹 Portugal:     57 cities
+  🇧🇪 Belgium:      37 cities
+  🇨🇭 Switzerland:  26 cities
+  🇦🇹 Austria:      10 cities
+
+🚀 QUICK START
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. MAKE EXECUTABLE:
+   chmod +x scripts/ice_cream_scraper.sh
+
+2. RUN IN FOREGROUND (see progress):
+   ./scripts/ice_cream_scraper.sh
+
+3. RUN IN BACKGROUND (recommended):
+   nohup ./scripts/ice_cream_scraper.sh > ice_cream_scrape.log 2>&1 &
+
+4. MONITOR PROGRESS:
+   tail -f data/ice_cream_progress.log
+   # Or if running with nohup:
+   tail -f ice_cream_scrape.log
+
+5. CHECK COMPLETION STATUS:
+   grep -c SUCCESS data/ice_cream_progress.log
+   echo "Progress: $(grep -c "SUCCESS\|SKIPPED" data/ice_cream_progress.log) / 2556"
+
+📁 OUTPUT LOCATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CSV Files: data/leads/*.csv
+  Progress Log: data/ice_cream_progress.log
+  
+  Example files:
+    data/leads/Berlin_handwerkliche_eisdiele_20260203_140532.csv
+    data/leads/Roma_gelateria_artigianale_20260203_141205.csv
+    data/leads/Madrid_heladería_artesanal_20260203_142030.csv
+
+⚙️  CONFIGURATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  MAX_RESULTS=500           # Results per search (INCREASED FROM 100)
+  FIND_EMAILS="--find-emails"  # Email extraction ENABLED
+
+  To disable email extraction for 2-3x faster scraping:
+  Edit the script and change:  FIND_EMAILS=""
+
+📈 PROGRESS TRACKING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  # Total completed
+  grep -c "SUCCESS\|SKIPPED\|FAILED" data/ice_cream_progress.log
+  
+  # Success count
+  grep -c SUCCESS data/ice_cream_progress.log
+  
+  # Skipped (already scraped)
+  grep -c SKIPPED data/ice_cream_progress.log
+  
+  # Failed
+  grep -c FAILED data/ice_cream_progress.log
+  
+  # Percentage complete
+  echo "scale=2; $(grep -c "SUCCESS\|SKIPPED" data/ice_cream_progress.log) / 2556 * 100" | bc
+  
+  # Estimated time remaining (at 2.5 min/search avg)
+  remaining=$((2556 - $(grep -c "SUCCESS\|SKIPPED\|FAILED" data/ice_cream_progress.log)))
+  echo "Remaining: $remaining searches (~$(echo "scale=1; $remaining * 2.5 / 60" | bc) hours)"
+
+🔍 DATA ANALYSIS (After Completion)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  # Count total businesses
+  find data/leads/ -name "*.csv" -exec wc -l {} \; | awk '{sum+=$1} END {print "Total:", sum-NR, "businesses"}'
+  
+  # Count CSV files
+  ls data/leads/*.csv 2>/dev/null | wc -l
+  
+  # Top 20 cities by results
+  for f in data/leads/*.csv; do echo "$(wc -l < "$f") $f"; done | sort -rn | head -20
+  
+  # Disk space used
+  du -sh data/leads/
+
+⚠️  IMPORTANT NOTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✓ Script can be safely interrupted (Ctrl+C) and restarted
+  ✓ Already-scraped cities are automatically skipped
+  ✓ CAPTCHA detection: script pauses, solve manually, then continues
+  ✓ Recommended: Run in background with nohup
+  ✓ Disk space: Ensure 2-3 GB free space for all results
+  ✓ Internet: Stable connection required for 3-5 days
+  ✓ VPN: Uses config from settings.yaml if enabled
+
+📞 EXPECTED DATA QUALITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  With Email Extraction (ENABLED):
+    Phone: 85-95% coverage
+    Email: 50-70% coverage  👈 Much better!
+    Website: 90-95% coverage
+    Address: 99% coverage
+  
+  Without Email Extraction:
+    Phone: 85-95% coverage
+    Email: 5-10% coverage   👈 Much lower
+    Website: 90-95% coverage
+    Address: 99% coverage
+
+🛑 STOP/RESUME
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  To stop:
+    - Foreground: Press Ctrl+C
+    - Background: kill $(ps aux | grep ice_cream_scraper | grep -v grep | awk '{print $2}')
+  
+  To resume:
+    Just run the script again - it will skip completed searches automatically
+
+═══════════════════════════════════════════════════════════════════════════
+                    🍦 Ready to scrape! Good luck! 🚀
+═══════════════════════════════════════════════════════════════════════════

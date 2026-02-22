@@ -1,0 +1,73 @@
+# Google Maps Lead Scraper Configuration
+
+scraper:
+  # Speed vs Detection tradeoff
+  delay_min: 2              # Min seconds between requests (reduced from 2 for faster scraping)
+  delay_max: 5              # Max seconds between requests (reduced from 5 for faster scraping)
+  scroll_delay: 3           # Delay while scrolling results (reduced from 2 for faster scraping)
+  page_load_timeout: 30     # Page load timeout in seconds
+  navigation_timeout: 30000 # Navigation timeout in milliseconds
+  business_page_timeout: 20000 # Business page load timeout in milliseconds
+  
+  # Results loading
+  results_wait_timeout: 20  # Max seconds to wait for results to load
+  max_scroll_attempts: 20   # Maximum scroll attempts when loading results
+  max_buttons_to_click: 50  # Maximum buttons to click when extracting URLs (fallback method)
+  
+  # Limits
+  max_results_per_search: 500  # Maximum businesses to scrape per search
+  
+  # Memory management
+  periodic_save_interval: 50  # Save to CSV every N businesses (0 = disabled)
+  
+  # Features
+  headless: true # Run browser in headless mode (true = faster but easier to detect)
+  find_emails: true         # Visit websites to extract emails (slower but better email coverage)
+  screenshot_on_error: true # Save screenshots when errors occur
+  
+  # CAPTCHA handling
+  pause_on_captcha: true    # Pause and wait for manual solve
+  captcha_check_interval: 5 # Check for CAPTCHA every N requests
+
+vpn:
+  enabled: true                   # Enable VPN support (requires NordVPN CLI installed)
+  stable_country_mode: true       # Keep one country connected; disable periodic rotation
+  event_rotation_enabled: true    # Rotate only when events happen (timeout/block/captcha)
+  rotation_interval: 50           # Used only when stable_country_mode is false
+  rotate_on_navigation_errors: true
+  rotate_on_google_block: true
+  rotate_on_captcha: true
+
+export:
+  deduplicate: true         # Remove duplicates in same session
+  format: csv               # Export format (csv, json)
+  output_dir: data/leads    # Directory for CSV exports
+  
+browser:
+  viewport_width: 1920
+  viewport_height: 1080
+  locale: "en-US"           # Will be overridden by --language parameter
+  
+email_extraction:
+  timeout: 25               # Timeout for website visits (seconds)
+  secondary_page_timeout: 8 # Timeout for extra paths like /contact (seconds)
+  max_pages_per_site: 5     # Max pages to check per website
+  max_retries: 3            # Retries for retryable HTTP status codes only
+  retry_connect_errors: 0   # Retries for connection errors (set low to avoid long stalls)
+  retry_read_errors: 0      # Retries for read/SSL errors (set low to avoid long stalls)
+  retry_backoff_factor: 0.2 # Backoff between retries (status-code retries)
+  common_paths:             # Paths to check for emails
+    - ""                    # Homepage
+    - "/contact"
+    - "/about"
+    - "/kontakt"            # German
+    - "/mentions-legales"   # French
+    - "/impressum"          # German
+    
+phone_extraction:
+  format: "E164"            # Phone number format (E164 = +33142654321)
+  validate: true            # Validate phone numbers
+  exclude_patterns:         # Skip these phone patterns
+    - "800"                 # Toll-free
+    - "888"
+    - "877"

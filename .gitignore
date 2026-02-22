@@ -1,0 +1,37 @@
+# Python cache and build artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tooling caches
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+
+# Runtime output and local artifacts
+data/logs/
+data/*.log
+data/leads/
+data/leads_DACH+PORT+SPANSIH_ICE.tar.gz
+tmp/
+scripts/tmp/
+
+# Local or sensitive files
+bandit
+.env
+.env.*
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

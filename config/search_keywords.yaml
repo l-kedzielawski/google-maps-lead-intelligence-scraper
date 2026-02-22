@@ -1,0 +1,366 @@
+# Pre-defined business keywords in multiple languages
+# Usage: python main.py --city "Warsaw" --business-type "pastry_shop" --language "pl"
+# This will use "cukiernia" as the search keyword
+
+# ============================================
+# PRIMARY TARGETS
+# ============================================
+
+# Pastry & Confectionery
+pastry_shop:
+  en: "pastry shop"
+  fr: "pâtisserie"
+  it: "pasticceria"
+  es: "pastelería"
+  de: "konditorei"
+  pt: "confeitaria"
+  pl: "cukiernia"
+
+confectionery:
+  en: "confectionery"
+  fr: "confiserie"
+  it: "confetteria"
+  es: "confitería"
+  de: "süßwarengeschäft"
+  pt: "confeitaria"
+  pl: "sklep cukierniczy"
+
+# Chocolate & Confectionery
+chocolate_maker:
+  en: "chocolate maker"
+  fr: "chocolatier"
+  it: "cioccolatiere"
+  es: "chocolatería"
+  de: "schokoladenhersteller"
+  pt: "chocolataria"
+  pl: "czekoladziarnia"
+
+ice_cream_maker:
+  en: "ice cream manufacturer"
+  fr: "fabricant de glace"
+  it: "produttore di gelato"
+  es: "fabricante de helados"
+  de: "eishersteller"
+  pt: "fabricante de sorvetes"
+  pl: "producent lodów"
+
+beverage_manufacturer:
+  en: "beverage manufacturer"
+  fr: "fabricant de boissons"
+  it: "produttore di bevande"
+  es: "fabricante de bebidas"
+  de: "getränkehersteller"
+  pt: "fabricante de bebidas"
+  pl: "producent napojów"
+
+
+chocolatier:
+  en: "artisan chocolatier"
+  fr: "chocolatier artisanal"
+  it: "cioccolatiere artigianale"
+  es: "chocolatero artesanal"
+  de: "handwerklicher chocolatier"
+  pt: "chocolateiro artesanal"
+  pl: "rzemieślniczy czekoladziarz"
+
+# Wholesale - Spices & Ingredients
+spice_wholesaler:
+  en: "spice wholesaler"
+  fr: "grossiste en épices"
+  it: "grossista di spezie"
+  es: "mayorista de especias"
+  de: "gewürzgroßhändler"
+  pt: "atacadista de especiarias"
+  pl: "hurtownia przypraw"
+
+baking_wholesaler:
+  en: "baking supplies wholesaler"
+  fr: "grossiste en fournitures de boulangerie"
+  it: "grossista di forniture per pasticceria"
+  es: "mayorista de suministros de panadería"
+  de: "backwarengroßhändler"
+  pt: "atacadista de suprimentos de panificação"
+  pl: "hurtownia cukiernicza"
+
+ingredient_supplier:
+  en: "food ingredient supplier"
+  fr: "fournisseur d'ingrédients alimentaires"
+  it: "fornitore di ingredienti alimentari"
+  es: "proveedor de ingredientes alimentarios"
+  de: "lebensmittelzutatenlieferant"
+  pt: "fornecedor de ingredientes alimentares"
+  pl: "dostawca składników spożywczych"
+
+# Beverages
+beverage_distributor:
+  en: "beverage distributor"
+  fr: "distributeur de boissons"
+  it: "distributore di bevande"
+  es: "distribuidor de bebidas"
+  de: "getränkehändler"
+  pt: "distribuidor de bebidas"
+  pl: "dystrybutor napojów"
+
+coffee_roastery:
+  en: "coffee roastery"
+  fr: "torréfacteur de café"
+  it: "torrefazione"
+  es: "tostador de café"
+  de: "kaffeerösterei"
+  pt: "torrefação de café"
+  pl: "palarnia kawy"
+
+# Supplements & Nutrition
+supplement_store:
+  en: "supplement store"
+  fr: "magasin de suppléments"
+  it: "negozio di integratori"
+  es: "tienda de suplementos"
+  de: "nahrungsergänzungsmittel geschäft"
+  pt: "loja de suplementos"
+  pl: "sklep z suplementami"
+
+health_food_store:
+  en: "health food store"
+  fr: "magasin d'aliments naturels"
+  it: "negozio di alimenti naturali"
+  es: "tienda de alimentos saludables"
+  de: "bioladen"
+  pt: "loja de produtos naturais"
+  pl: "sklep ze zdrową żywnością"
+
+# HoReCa (Hotels, Restaurants, Catering)
+horeca_supplier:
+  en: "horeca supplier"
+  fr: "fournisseur horeca"
+  it: "fornitore horeca"
+  es: "proveedor horeca"
+  de: "horeca lieferant"
+  pt: "fornecedor horeca"
+  pl: "dostawca horeca"
+
+catering_company:
+  en: "catering company"
+  fr: "entreprise de restauration"
+  it: "azienda di catering"
+  es: "empresa de catering"
+  de: "catering unternehmen"
+  pt: "empresa de catering"
+  pl: "firma cateringowa"
+
+# Artisanal & Specialty
+artisan_producer:
+  en: "artisan food producer"
+  fr: "producteur alimentaire artisanal"
+  it: "produttore alimentare artigianale"
+  es: "productor de alimentos artesanales"
+  de: "handwerklicher lebensmittelproduzent"
+  pt: "produtor artesanal de alimentos"
+  pl: "rzemieślniczy producent żywności"
+
+specialty_food_store:
+  en: "specialty food store"
+  fr: "épicerie fine"
+  it: "negozio di specialità alimentari"
+  es: "tienda de alimentos especiales"
+  de: "feinkostgeschäft"
+  pt: "loja de alimentos especiais"
+  pl: "sklep ze specjalnościami"
+
+# Cosmetics & Fragrance
+cosmetics_manufacturer:
+  en: "cosmetics manufacturer"
+  fr: "fabricant de cosmétiques"
+  it: "produttore di cosmetici"
+  es: "fabricante de cosméticos"
+  de: "kosmetikhersteller"
+  pt: "fabricante de cosméticos"
+  pl: "producent kosmetyków"
+
+perfume_shop:
+  en: "perfume shop"
+  fr: "parfumerie"
+  it: "profumeria"
+  es: "perfumería"
+  de: "parfümerie"
+  pt: "perfumaria"
+  pl: "perfumeria"
+
+natural_cosmetics:
+  en: "natural cosmetics store"
+  fr: "magasin de cosmétiques naturels"
+  it: "negozio di cosmetici naturali"
+  es: "tienda de cosméticos naturales"
+  de: "naturkosmetik geschäft"
+  pt: "loja de cosméticos naturais"
+  pl: "sklep z naturalnymi kosmetykami"
+
+# Distributors & Retail
+food_distributor:
+  en: "food distributor"
+  fr: "distributeur alimentaire"
+  it: "distributore alimentare"
+  es: "distribuidor de alimentos"
+  de: "lebensmittelverteiler"
+  pt: "distribuidor de alimentos"
+  pl: "dystrybutor żywności"
+
+organic_store:
+  en: "organic store"
+  fr: "magasin bio"
+  it: "negozio biologico"
+  es: "tienda orgánica"
+  de: "bioladen"
+  pt: "loja orgânica"
+  pl: "sklep ekologiczny"
+
+gourmet_shop:
+  en: "gourmet shop"
+  fr: "boutique gastronomique"
+  it: "negozio gourmet"
+  es: "tienda gourmet"
+  de: "gourmet shop"
+  pt: "loja gourmet"
+  pl: "sklep z żywnością gourmet"
+
+# Private Labels & Brands
+private_label_manufacturer:
+  en: "private label manufacturer"
+  fr: "fabricant de marque distributeur"
+  it: "produttore private label"
+  es: "fabricante de marca blanca"
+  de: "eigenmarkenhersteller"
+  pt: "fabricante de marca própria"
+  pl: "producent marek własnych"
+
+
+# ============================================
+# GENERAL FOOD & HOSPITALITY
+# ============================================
+
+bakery:
+  en: "bakery"
+  fr: "boulangerie"
+  it: "panetteria"
+  es: "panadería"
+  de: "bäckerei"
+  pt: "padaria"
+  pl: "piekarnia"
+
+ice_cream:
+  en: "ice cream shop"
+  fr: "glacier"
+  it: "gelateria"
+  es: "heladería"
+  de: "eisdiele"
+  pt: "sorveteria"
+  pl: "lodziarnia"
+
+restaurant:
+  en: "restaurant"
+  fr: "restaurant"
+  it: "ristorante"
+  es: "restaurante"
+  de: "restaurant"
+  pt: "restaurante"
+  pl: "restauracja"
+
+hotel:
+  en: "hotel"
+  fr: "hôtel"
+  it: "hotel"
+  es: "hotel"
+  de: "hotel"
+  pt: "hotel"
+  pl: "hotel"
+
+cafe:
+  en: "cafe"
+  fr: "café"
+  it: "caffè"
+  es: "cafetería"
+  de: "café"
+  pt: "cafeteria"
+  pl: "kawiarnia"
+
+bar:
+  en: "bar"
+  fr: "bar"
+  it: "bar"
+  es: "bar"
+  de: "bar"
+  pt: "bar"
+  pl: "bar"
+
+# ============================================
+# OTHER SERVICES
+# ============================================
+
+gym:
+  en: "gym"
+  fr: "salle de sport"
+  it: "palestra"
+  es: "gimnasio"
+  de: "fitnessstudio"
+  pt: "academia"
+  pl: "siłownia"
+
+spa:
+  en: "spa"
+  fr: "spa"
+  it: "spa"
+  es: "spa"
+  de: "spa"
+  pt: "spa"
+  pl: "spa"
+
+hairdresser:
+  en: "hair salon"
+  fr: "salon de coiffure"
+  it: "parrucchiere"
+  es: "peluquería"
+  de: "friseur"
+  pt: "cabeleireiro"
+  pl: "fryzjer"
+
+dentist:
+  en: "dentist"
+  fr: "dentiste"
+  it: "dentista"
+  es: "dentista"
+  de: "zahnarzt"
+  pt: "dentista"
+  pl: "dentysta"
+
+florist:
+  en: "florist"
+  fr: "fleuriste"
+  it: "fiorista"
+  es: "floristería"
+  de: "florist"
+  pt: "florista"
+  pl: "kwiaciarnia"
+
+bookstore:
+  en: "bookstore"
+  fr: "librairie"
+  it: "libreria"
+  es: "librería"
+  de: "buchhandlung"
+  pt: "livraria"
+  pl: "księgarnia"
+
+# ============================================
+# USAGE EXAMPLES:
+# ============================================
+# Polish spice wholesaler:
+#   python main.py --city "Warsaw" --business-type "spice_wholesaler" --language "pl"
+#
+# French pastry shops:
+#   python main.py --city "Paris" --business-type "pastry_shop" --language "fr"
+#
+# German chocolate makers:
+#   python main.py --city "Munich" --business-type "chocolate_maker" --language "de"
+#
+# Italian artisan producers:
+#   python main.py --city "Rome" --business-type "artisan_producer" --language "it"
