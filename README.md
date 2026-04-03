@@ -41,5 +41,6 @@ Manual lead research is slow, inconsistent, and hard to scale across multiple ma
 
 For project discussions, freelance collaboration, or implementation support:
 
-- Email: `lukasz@kedzielawski.com`
-- Website: `www.kedzielawski.com`
+- Name: `Lukasz Kedzielawski`
+- Email: `l.kedzielawski@gmail.com`
+
